@@ -415,17 +415,6 @@
     width: 220px;
   }
 
-  .about-video-section {
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    padding-left: 0;
-  }
-
-  .about-video-column,
-  .about-reel {
-    width: min(100%, 220px);
-  }
 }
 
 .story p {
@@ -645,6 +634,51 @@
   font-size: 1.05rem;
   line-height: 1.45;
   color: var(--muted);
+}
+
+/* Phone layout for the founder section. These rules have to sit after the
+   desktop ones above, otherwise the wide left padding and no-wrap headings
+   win and push the text off the side of the screen. */
+@media (max-width: 900px) {
+  .about-video-section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .about-video-column,
+  .about-reel {
+    width: min(100%, 300px);
+  }
+
+  .about-video-copy {
+    width: 100%;
+    justify-content: flex-start;
+    padding-bottom: 0;
+  }
+
+  .about-video-caption {
+    white-space: normal;
+    font-size: clamp(1.9rem, 9vw, 3.3rem);
+  }
+
+  .about-video-sub,
+  .about-follow-label {
+    white-space: normal;
+  }
+
+  .about-follow-label {
+    font-size: 1.1rem;
+  }
+
+  .about-follow {
+    width: 100%;
+    margin-top: 1.6rem;
+    transform: none;
+  }
 }
 
 .past-events {
