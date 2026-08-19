@@ -1,90 +1,46 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import BrandMark from './BrandMark'
 import CartNavLink from './CartNavLink'
 import SiteFooter from './SiteFooter'
 import './App.css'
 
-const STORAGE_KEY = 'angelle-sucre-event-photos'
-const STARTER_EVENTS = [
+const EVENT_PHOTOS = [
   {
-    id: 'starter-picnic',
-    src: '/images/picnic-popup.png',
-    label: 'Picnic pop-up',
+    id: 'popup-crew',
+    src: '/images/popup-spring-crew.jpg',
+    label: 'The Angelle Sucre team at the spring pop-up',
   },
   {
-    id: 'starter-cakes',
-    src: '/images/picnic-cakes.png',
-    label: 'Mini cakes table',
+    id: 'popup-guest',
+    src: '/images/popup-spring-guest.jpg',
+    label: 'A guest with a strawberry matcha',
   },
   {
-    id: 'starter-angelle',
-    src: '/images/picnic-angelle.png',
-    label: 'Behind the scenes',
+    id: 'popup-serving',
+    src: '/images/popup-spring-serving.jpg',
+    label: 'Serving matcha at the pop-up',
+  },
+  {
+    id: 'popup-matcha-bar',
+    src: '/images/popup-spring-matcha-bar.jpg',
+    label: 'The matcha bar, set with fresh ranunculus',
+  },
+  {
+    id: 'popup-cake-drink',
+    src: '/images/popup-spring-cake-drink.jpg',
+    label: 'A fig and chamomile mini cake with a lemon matcha',
+  },
+  {
+    id: 'popup-lemon-matcha',
+    src: '/images/popup-spring-lemon-matcha.jpg',
+    label: 'Honey lemon matcha',
   },
 ]
 
 function AboutPage() {
-  const [eventPhotos, setEventPhotos] = useState(STARTER_EVENTS)
-  const [ready, setReady] = useState(false)
   const [reelPlaying, setReelPlaying] = useState(false)
-  const inputRef = useRef(null)
   const reelRef = useRef(null)
-
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY)
-      if (saved) {
-        const parsed = JSON.parse(saved)
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          setEventPhotos(parsed)
-        }
-      }
-    } catch {
-      // ignore bad storage
-    }
-    setReady(true)
-  }, [])
-
-  useEffect(() => {
-    if (!ready) return
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(eventPhotos))
-    } catch {
-      // storage full — keep photos in view for this session
-    }
-  }, [eventPhotos, ready])
-
-  function readFiles(fileList) {
-    const files = Array.from(fileList || []).filter((file) =>
-      file.type.startsWith('image/'),
-    )
-    if (!files.length) return
-
-    files.forEach((file) => {
-      const reader = new FileReader()
-      reader.onload = () => {
-        setEventPhotos((prev) => [
-          {
-            id: `${file.name}-${file.lastModified}-${Math.random().toString(36).slice(2)}`,
-            src: reader.result,
-            label: file.name.replace(/\.[^.]+$/, ''),
-          },
-          ...prev,
-        ])
-      }
-      reader.readAsDataURL(file)
-    })
-  }
-
-  function onDrop(event) {
-    event.preventDefault()
-    readFiles(event.dataTransfer.files)
-  }
-
-  function removePhoto(id) {
-    setEventPhotos((prev) => prev.filter((photo) => photo.id !== id))
-  }
 
   function playReel() {
     setReelPlaying(true)
@@ -295,40 +251,10 @@ function AboutPage() {
           <p className="section-caption">Photos from May 2026 event</p>
         </div>
 
-        <label
-          className="upload-zone"
-          onDragOver={(event) => event.preventDefault()}
-          onDrop={onDrop}
-        >
-          <input
-            ref={inputRef}
-            type="file"
-            accept="image/*"
-            multiple
-            className="upload-input"
-            onChange={(event) => {
-              readFiles(event.target.files)
-              event.target.value = ''
-            }}
-          />
-          <span className="upload-title">Upload event photos</span>
-          <span className="upload-hint">
-            Drag and drop images here, or click to choose from your computer
-          </span>
-        </label>
-
         <div className="event-grid">
-          {eventPhotos.map((photo) => (
+          {EVENT_PHOTOS.map((photo) => (
             <article key={photo.id} className="event-card">
               <img src={photo.src} alt={photo.label || 'Past event'} />
-              <button
-                type="button"
-                className="event-remove"
-                onClick={() => removePhoto(photo.id)}
-                aria-label={`Remove ${photo.label || 'photo'}`}
-              >
-                Remove
-              </button>
             </article>
           ))}
         </div>
