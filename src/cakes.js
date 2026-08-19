@@ -161,6 +161,7 @@ export const cakes = [
     otherLooks: [
       '/images/cake-spring-florals-1.jpg',
       '/images/cake-spring-florals-2.jpg',
+      { src: '/images/cake-spring-florals-3.jpg', caption: 'Shown as an 8" round' },
     ],
     sizes: [
       { label: '6"', price: '$130' },

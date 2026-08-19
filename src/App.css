@@ -108,7 +108,7 @@
   font-family: 'Pinyon Script', cursive;
   /* scales with the viewport on phones so the wordmark stays inside the
      photo band instead of overflowing, and holds at 70px on laptops */
-  font-size: clamp(1.75rem, 12vw, 56px);
+  font-size: clamp(1.75rem, 12vw, 70px);
   line-height: 1;
   color: #7f5157;
   text-align: center;
@@ -1224,6 +1224,20 @@
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
   width: 100%;
+}
+
+.other-looks-item {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+}
+
+.other-looks-caption {
+  font-size: 0.8rem;
+  font-style: italic;
+  line-height: 1.35;
+  color: #5d585b;
+  text-align: center;
 }
 
 .other-looks-card {

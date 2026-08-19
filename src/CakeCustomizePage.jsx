@@ -187,15 +187,25 @@ function CakeCustomizePage() {
             <section className="other-looks" aria-label={cake.otherLooksTitle || 'Other looks'}>
               <h2>{cake.otherLooksTitle || 'Other looks'}</h2>
               <div className="other-looks-grid">
-                {cake.otherLooks.map((photo, index) => (
-                  <div
-                    key={photo}
-                    className="other-looks-card"
-                    style={{ '--photo': `url(${photo})` }}
-                    role="img"
-                    aria-label={`${cake.otherLooksTitle || 'Look'} ${index + 1}`}
-                  />
-                ))}
+                {cake.otherLooks.map((look, index) => {
+                  const src = typeof look === 'string' ? look : look.src
+                  const caption = typeof look === 'string' ? '' : look.caption
+                  return (
+                    <figure key={src} className="other-looks-item">
+                      <div
+                        className="other-looks-card"
+                        style={{ '--photo': `url(${src})` }}
+                        role="img"
+                        aria-label={
+                          caption || `${cake.otherLooksTitle || 'Look'} ${index + 1}`
+                        }
+                      />
+                      {caption ? (
+                        <figcaption className="other-looks-caption">{caption}</figcaption>
+                      ) : null}
+                    </figure>
+                  )
+                })}
               </div>
             </section>
           ) : null}
