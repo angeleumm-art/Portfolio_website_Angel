@@ -17,6 +17,11 @@ const EVENT_PHOTOS = [
     label: 'A guest with a strawberry matcha',
   },
   {
+    id: 'popup-cake-drink',
+    src: '/images/popup-spring-cake-drink.jpg',
+    label: 'A fig and chamomile mini cake with a lemon matcha',
+  },
+  {
     id: 'popup-serving',
     src: '/images/popup-spring-serving.jpg',
     label: 'Serving matcha at the pop-up',
@@ -25,11 +30,6 @@ const EVENT_PHOTOS = [
     id: 'popup-matcha-bar',
     src: '/images/popup-spring-matcha-bar.jpg',
     label: 'The matcha bar, set with fresh ranunculus',
-  },
-  {
-    id: 'popup-cake-drink',
-    src: '/images/popup-spring-cake-drink.jpg',
-    label: 'A fig and chamomile mini cake with a lemon matcha',
   },
   {
     id: 'popup-lemon-matcha',
