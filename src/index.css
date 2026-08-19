@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..48&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Pinyon+Script&display=swap');
+
+:root {
+  --bg: #fffbe3;
+  --text: #2f2522;
+  --muted: #7a6a66;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+#root {
+  min-height: 100vh;
+}
