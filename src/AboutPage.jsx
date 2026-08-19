@@ -128,7 +128,7 @@ function AboutPage() {
               <video
                 ref={reelRef}
                 className="about-highlight-video"
-                src="/videos/about-highlight.MOV"
+                src="/videos/about-highlight.mp4"
                 poster="/images/about-reel-cover.png"
                 controls={reelPlaying}
                 playsInline
