@@ -152,7 +152,7 @@ export const cakes = [
   {
     slug: 'spring-florals',
     name: 'Spring Florals',
-    detail: 'Tall soft cream cake topped with fresh spring flowers',
+    detail: 'Tall classic sweet cream cake topped with fresh spring flowers',
     price: 'from $130',
     image: '/images/cake-spring-florals.jpg',
     photoCaption: 'Cake in photo shown is a 6" round',
@@ -168,7 +168,8 @@ export const cakes = [
       { label: '8"', price: '$145' },
     ],
     fillings: [
-      'Soft Cream',
+      'Classic Sweet Cream',
+      'Buttercream',
       'Strawberries +$5',
       'Raspberries +$5',
       'Mixed Berries (strawberries, raspberries, & blueberries) +$5',
@@ -550,6 +551,7 @@ export const cakes = [
     slug: 'custom-cake',
     name: 'Custom Cake',
     detail: 'DM us an inspiration photo of your dream cake and we will design it together to our best abilities <3',
+    note: 'Custom cake orders must be placed AT LEAST a week in advance.',
     price: 'quote on request',
     image: '/images/cake-custom.jpg',
     images: [

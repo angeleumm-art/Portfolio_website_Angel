@@ -44,8 +44,9 @@ function FaqsPage() {
           <h2>How far in advance should I order?</h2>
           <p>
             We recommend ordering at least one month in advance to secure your preferred date
-            and design. Rush orders may be available depending on the season and design. If
-            your date is unavailable online, email us to inquire about availability.
+            and design. Custom cake orders must be placed AT LEAST a week in advance. Rush
+            orders may be available depending on the season and design. If your date is
+            unavailable online, email us to inquire about availability.
           </p>
         </section>
 
