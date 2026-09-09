@@ -132,6 +132,14 @@ export const cakes = [
     note: '*Inspo from Kylie Jenner\'s birthday cake',
     price: 'from $130',
     image: '/images/cake-raspberry-fields.jpg',
+    images: [
+      '/images/cake-raspberry-fields.jpg',
+      '/images/cake-raspberry-fields-heart.jpg',
+    ],
+    photoCaptions: [
+      'Cake in photo shown is a 10" round',
+      'Cake in photo shown is a 6" heart',
+    ],
     photoCaption: 'Cake in photo shown is a 10" round',
     floral: true,
     sizes: [
