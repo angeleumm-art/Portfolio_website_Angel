@@ -58,6 +58,11 @@ function App() {
       name: 'Burgundy Bloom',
     },
     {
+      image: '/images/cake-coquette-bows.jpg',
+      slug: 'coquette-bows',
+      name: 'Coquette Bows',
+    },
+    {
       image: '/images/cake-coquette-raspberry.jpg',
       slug: 'coquette-raspberry',
       name: 'Coquette Raspberry',

@@ -438,6 +438,27 @@ export const cakes = [
     ],
   },
   {
+    slug: 'coquette-bows',
+    name: 'Coquette Bows',
+    detail: 'Classic sweet cream cake with vintage piping and white bows',
+    price: 'from $120',
+    image: '/images/cake-coquette-bows.jpg',
+    photoCaption: 'Cake in photo shown is a 6" round',
+    sizes: [
+      { label: '6"', price: '$120' },
+      { label: '8"', price: '$130' },
+    ],
+    flavors: ['Vanilla', 'Chocolate', 'Matcha (+$10)'],
+    shapes: ['Round', 'Heart'],
+    fillings: [
+      'Classic Sweet Cream',
+      'Strawberries +$5',
+      'Raspberries +$5',
+      'Mixed Berries (strawberries, raspberries, & blueberries) +$5',
+      'Nutella +$5',
+    ],
+  },
+  {
     slug: 'coquette-raspberry',
     bestSeller: true,
     name: 'Coquette Raspberry',
